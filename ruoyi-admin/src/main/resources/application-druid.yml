@@ -2,13 +2,20 @@
 spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
-        driverClassName: com.mysql.cj.jdbc.Driver
+        driverClassName: dm.jdbc.driver.DmDriver
         druid:
             # 主库数据源
+            # 外网
             master:
-                url: jdbc:mysql://localhost:3306/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-                username: root
-                password: password
+              url: jdbc:dm://1iu5kb475621.vicp.fun:41550/RY-VUE?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+              username: SYSDBA
+              password: Ec123456
+            #公司WiFi
+#            master:
+#              url: jdbc:dm://100.100.200.213:5236/RY-VUE?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+#              username: SYSDBA
+#              password: Ec123456
+
             # 从库数据源
             slave:
                 # 从数据源开关/默认关闭
